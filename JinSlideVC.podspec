@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.author       = { "Peter" => "i@jxb.name" }
   s.requires_arc = true
   s.source       = { :git => "https://github.com/JxbSir/JinSlideVC.git"  }
-  s.public_header_files = 'JinSlideView/*.h'
   s.source_files = "JinSlideView/*.{h,m}"
 
 end
