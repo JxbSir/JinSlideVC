@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/JxbSir/JinSlideVC.git", :tag => "1.0.0" }
 
   s.public_header_files = 'JinSlideView/*.h'
-  s.source_files = 'JinSlideView/JinSlideView.h'
+  s.source_files = 'JinSlideView/*.{h,m}'
 
 end
