@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source       = { :git => "https://github.com/JxbSir/JinSlideVC.git", :tag => “1.0.0” }
 
-  s.public_header_files = 'JinSlideVC/JinSlideView/*.h’
-  s.source_files = 'JinSlideVC/JinSlideView/JinSlideView.h’
+  s.public_header_files = 'JinSlideView/*.h’
+  s.source_files = 'JinSlideView/JinSlideView.h’
 
 end

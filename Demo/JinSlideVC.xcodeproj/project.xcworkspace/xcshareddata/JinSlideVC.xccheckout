@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</key>
-		<string>https://gitlab.com/king824/jinslidevc.git</string>
+		<string>github.com:JxbSir/JinSlideVC.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JinSlideVC.xcodeproj</string>
+	<string>Demo/JinSlideVC.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://gitlab.com/king824/jinslidevc.git</string>
+	<string>github.com:JxbSir/JinSlideVC.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</string>
 			<key>IDESourceControlWCCName</key>
-			<string>JinSlideVC</string>
+			<string>JinSlidePageVC</string>
 		</dict>
 	</array>
 </dict>

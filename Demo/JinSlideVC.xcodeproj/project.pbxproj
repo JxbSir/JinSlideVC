@@ -14,7 +14,7 @@
 		D0165E0C1A5D29BB005D053E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0165E0B1A5D29BB005D053E /* Images.xcassets */; };
 		D0165E0F1A5D29BB005D053E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0165E0D1A5D29BB005D053E /* LaunchScreen.xib */; };
 		D0165E1B1A5D29BB005D053E /* JinSlideVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0165E1A1A5D29BB005D053E /* JinSlideVCTests.m */; };
-		D0165E271A5D29F2005D053E /* JinSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0165E261A5D29F2005D053E /* JinSlideView.m */; };
+		D05FC96F1A5E430300465DE4 /* JinSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = D05FC96E1A5E430300465DE4 /* JinSlideView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		D0165E141A5D29BB005D053E /* JinSlideVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JinSlideVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0165E191A5D29BB005D053E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0165E1A1A5D29BB005D053E /* JinSlideVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JinSlideVCTests.m; sourceTree = "<group>"; };
-		D0165E251A5D29F2005D053E /* JinSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinSlideView.h; sourceTree = "<group>"; };
-		D0165E261A5D29F2005D053E /* JinSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinSlideView.m; sourceTree = "<group>"; };
+		D05FC96D1A5E430300465DE4 /* JinSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinSlideView.h; sourceTree = "<group>"; };
+		D05FC96E1A5E430300465DE4 /* JinSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinSlideView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 		D0165DF21A5D29BB005D053E = {
 			isa = PBXGroup;
 			children = (
+				D05FC96C1A5E430300465DE4 /* JinSlideView */,
 				D0165DFD1A5D29BB005D053E /* JinSlideVC */,
 				D0165E171A5D29BB005D053E /* JinSlideVCTests */,
 				D0165DFC1A5D29BB005D053E /* Products */,
@@ -84,7 +85,6 @@
 		D0165DFD1A5D29BB005D053E /* JinSlideVC */ = {
 			isa = PBXGroup;
 			children = (
-				D0165E241A5D29F2005D053E /* JinSlideView */,
 				D0165E021A5D29BB005D053E /* AppDelegate.h */,
 				D0165E031A5D29BB005D053E /* AppDelegate.m */,
 				D0165E051A5D29BB005D053E /* ViewController.h */,
@@ -123,13 +123,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D0165E241A5D29F2005D053E /* JinSlideView */ = {
+		D05FC96C1A5E430300465DE4 /* JinSlideView */ = {
 			isa = PBXGroup;
 			children = (
-				D0165E251A5D29F2005D053E /* JinSlideView.h */,
-				D0165E261A5D29F2005D053E /* JinSlideView.m */,
+				D05FC96D1A5E430300465DE4 /* JinSlideView.h */,
+				D05FC96E1A5E430300465DE4 /* JinSlideView.m */,
 			);
-			path = JinSlideView;
+			name = JinSlideView;
+			path = ../JinSlideView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +235,7 @@
 			files = (
 				D0165E071A5D29BB005D053E /* ViewController.m in Sources */,
 				D0165E041A5D29BB005D053E /* AppDelegate.m in Sources */,
-				D0165E271A5D29F2005D053E /* JinSlideView.m in Sources */,
+				D05FC96F1A5E430300465DE4 /* JinSlideView.m in Sources */,
 				D0165E011A5D29BB005D053E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +427,7 @@
 				D0165E201A5D29BB005D053E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0165E211A5D29BB005D053E /* Build configuration list for PBXNativeTarget "JinSlideVCTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +436,7 @@
 				D0165E231A5D29BB005D053E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
