@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>511F3E72-9393-4A57-8BDE-AD6B6510425D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JinSlideVC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</key>
+		<string>https://gitlab.com/king824/jinslidevc.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JinSlideVC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://gitlab.com/king824/jinslidevc.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FAB2701428BC8FB5560D7676CB86DE73B05F20EE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JinSlideVC</string>
+		</dict>
+	</array>
+</dict>
+</plist>
