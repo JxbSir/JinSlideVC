@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source       = { :git => "https://github.com/JxbSir/JinSlideVC.git"  }
   s.source_files = "JinSlideView/*.{h,m}"
+  s.exclude_files = 'JinSlideView'
 
 end
