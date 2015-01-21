@@ -45,7 +45,7 @@
     [vc4.view addSubview:lbl4];
     
     
-    JinSlideView* sl = [[JinSlideView alloc] initWithTitles:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) vcArray:@[vc1,vc2,vc3,vc4] selectIndex:1];
+    JinSlideView* sl = [[JinSlideView alloc] initWithTitlesAndColor:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) vcArray:@[vc1,vc2,vc3,vc4] selectIndex:1 corSel:[UIColor redColor] corUnSel:[UIColor blackColor] corBotView:[UIColor greenColor]];
     
     [self.view addSubview:sl];
     

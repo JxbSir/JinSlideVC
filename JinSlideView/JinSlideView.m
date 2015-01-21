@@ -26,59 +26,79 @@
 {
     if(self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor whiteColor];
-        nowSelectIndex = -1;
-        arrOfLabels = [NSMutableArray array];
-        perW = frame.size.width / vcArray.count;
-        for (int i = 0; i < vcArray.count; i++)
-        {
-            UIViewController* vc = [vcArray objectAtIndex:i];
-            UILabel* lbl = [[UILabel alloc] init];
-            [lbl setText:vc.title];
-            [lbl setFont:[UIFont systemFontOfSize:SLIDER_TITLE_SIZE]];
-            CGSize titleSize = [self textSizeWithFont:vc.title font:[UIFont systemFontOfSize:SLIDER_TITLE_SIZE] constrainedToSize:CGSizeMake(MAXFLOAT, 30) lineBreakMode:NSLineBreakByWordWrapping];
-            [lbl setFrame:CGRectMake((perW - titleSize.width)/2 + perW * i, 10, perW, 22)];
-            if (i == 0)
-                [lbl setTextColor:SLIDER_TITLE_COLOR];
-            else
-                [lbl setTextColor:SLIDER_UNTITLE_COLOR];
-            [self addSubview:lbl];
-            [arrOfLabels addObject:lbl];
-        
-            UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
-            [self addGestureRecognizer:tapGesture];
-        }
-        
-        UIView* bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, BottomY, frame.size.width, 1)];
-        bottomLine.backgroundColor = BORDER_GRAY_COLOR;
-        [self addSubview:bottomLine];
-        
-        bottomView = [[UIView alloc] initWithFrame:CGRectMake(nowSelectIndex * perW + leftPad, BottomY, perW - leftPad * 2, SLIDER_BOTTOM_SIZE)];
-        bottomView.backgroundColor = SLIDER_BOTTOM_COLOR;
-        [self addSubview:bottomView];
-        
-        scView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, BottomY, frame.size.width, frame.size.height - BottomY)];
-        [scView setDelegate:self];
-        [scView setContentSize:CGSizeMake(frame.size.width * vcArray.count, frame.size.height - BottomY)];
-        scView.backgroundColor = [UIColor whiteColor];
-        scView.scrollEnabled = YES;
-        scView.userInteractionEnabled = YES;
-        scView.pagingEnabled = YES;
-        scView.bounces = NO;
-        scView.showsHorizontalScrollIndicator = NO;
-        scView.showsVerticalScrollIndicator = NO;
-        [self addSubview:scView];
-        
-        for (int i = 0 ; i < vcArray.count; i++) {
-            UIViewController* vc = [vcArray objectAtIndex:i];
-            UIView* v = vc.view;
-            [v setFrame:CGRectMake(frame.size.width * i, 0, frame.size.width, frame.size.height - BottomY)];
-            [scView addSubview:v];
-        }
-
-        [self setSelectIndex:selectIndex bSetOff:YES];
+        corLblSelected = SLIDER_TITLE_COLOR;
+        corLblUnSelected = SLIDER_UNTITLE_COLOR;
+        corImgBotView = SLIDER_BOTTOM_COLOR;
+        [self loadView:frame vcArray:vcArray selectIndex:selectIndex];
     }
     return self;
+}
+
+- (id)initWithTitlesAndColor:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex corSel:(UIColor*)corSel corUnSel:(UIColor*)corUnSel corBotView:(UIColor*)corBotView
+{
+    if(self = [super initWithFrame:frame])
+    {
+        corLblSelected = corSel;
+        corLblUnSelected = corUnSel;
+        corImgBotView = corBotView;
+        [self loadView:frame vcArray:vcArray selectIndex:selectIndex];
+    }
+    return self;
+}
+
+- (void)loadView:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex
+{
+    self.backgroundColor = [UIColor whiteColor];
+    nowSelectIndex = -1;
+    arrOfLabels = [NSMutableArray array];
+    perW = frame.size.width / vcArray.count;
+    for (int i = 0; i < vcArray.count; i++)
+    {
+        UIViewController* vc = [vcArray objectAtIndex:i];
+        UILabel* lbl = [[UILabel alloc] init];
+        [lbl setText:vc.title];
+        [lbl setFont:[UIFont systemFontOfSize:SLIDER_TITLE_SIZE]];
+        CGSize titleSize = [self textSizeWithFont:vc.title font:[UIFont systemFontOfSize:SLIDER_TITLE_SIZE] constrainedToSize:CGSizeMake(MAXFLOAT, 30) lineBreakMode:NSLineBreakByWordWrapping];
+        [lbl setFrame:CGRectMake((perW - titleSize.width)/2 + perW * i, 10, perW, 22)];
+        if (i == 0)
+            [lbl setTextColor:corLblSelected];
+        else
+            [lbl setTextColor:corLblUnSelected];
+        [self addSubview:lbl];
+        [arrOfLabels addObject:lbl];
+        
+        UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
+        [self addGestureRecognizer:tapGesture];
+    }
+    
+    UIView* bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, BottomY, frame.size.width, 1)];
+    bottomLine.backgroundColor = BORDER_GRAY_COLOR;
+    [self addSubview:bottomLine];
+    
+    bottomView = [[UIView alloc] initWithFrame:CGRectMake(nowSelectIndex * perW + leftPad, BottomY, perW - leftPad * 2, SLIDER_BOTTOM_SIZE)];
+    bottomView.backgroundColor = corImgBotView;
+    [self addSubview:bottomView];
+    
+    scView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, BottomY, frame.size.width, frame.size.height - BottomY)];
+    [scView setDelegate:self];
+    [scView setContentSize:CGSizeMake(frame.size.width * vcArray.count, frame.size.height - BottomY)];
+    scView.backgroundColor = [UIColor whiteColor];
+    scView.scrollEnabled = YES;
+    scView.userInteractionEnabled = YES;
+    scView.pagingEnabled = YES;
+    scView.bounces = NO;
+    scView.showsHorizontalScrollIndicator = NO;
+    scView.showsVerticalScrollIndicator = NO;
+    [self addSubview:scView];
+    
+    for (int i = 0 ; i < vcArray.count; i++) {
+        UIViewController* vc = [vcArray objectAtIndex:i];
+        UIView* v = vc.view;
+        [v setFrame:CGRectMake(frame.size.width * i, 0, frame.size.width, frame.size.height - BottomY)];
+        [scView addSubview:v];
+    }
+    
+    [self setSelectIndex:selectIndex bSetOff:YES];
 }
 
 #pragma mark - 滑动回调
@@ -142,12 +162,12 @@
 - (void)setSelectIndex:(unsigned long)index bSetOff:(BOOL)bSetOff
 {
     for (UILabel* lb in arrOfLabels) {
-        [lb setTextColor:SLIDER_UNTITLE_COLOR];
+        [lb setTextColor:corLblUnSelected];
     }
     if(index >= arrOfLabels.count)
         index = arrOfLabels.count - 1;
     UILabel* lbl = [arrOfLabels objectAtIndex:index];
-    [lbl setTextColor:SLIDER_TITLE_COLOR];
+    [lbl setTextColor:corLblSelected];
     [self setBottomView:index];
     nowSelectIndex = index;
     if (bSetOff)

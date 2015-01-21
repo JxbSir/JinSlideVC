@@ -21,11 +21,16 @@
     unsigned long   nowSelectIndex;
     
     __weak id<JinSliderViewDelegate> delegate;
+    
+    UIColor* corLblSelected;
+    UIColor* corLblUnSelected;
+    UIColor* corImgBotView;
 }
 @property(nonatomic,weak)id<JinSliderViewDelegate> delegate;
 
 
 - (id)initWithTitles:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex;
+- (id)initWithTitlesAndColor:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex corSel:(UIColor*)corSel corUnSel:(UIColor*)corUnSel corBotView:(UIColor*)corBotView;
 
 - (void)setSelectIndex:(unsigned long)index bSetOff:(BOOL)bSetOff;
 
