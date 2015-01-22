@@ -79,7 +79,7 @@
     bottomView.backgroundColor = corImgBotView;
     [self addSubview:bottomView];
     
-    scView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, BottomY, frame.size.width, frame.size.height - BottomY)];
+    scView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, BottomY + 1, frame.size.width, frame.size.height - BottomY)];
     [scView setDelegate:self];
     [scView setContentSize:CGSizeMake(frame.size.width * vcArray.count, frame.size.height - BottomY)];
     scView.backgroundColor = [UIColor whiteColor];
