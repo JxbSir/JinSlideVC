@@ -21,12 +21,17 @@
     unsigned long   nowSelectIndex;
     
     __weak id<JinSliderViewDelegate> delegate;
+    BOOL enableDragSlide;
     
     UIColor* corLblSelected;
     UIColor* corLblUnSelected;
     UIColor* corImgBotView;
+    
+    
+    CGFloat  fHisX;
 }
 @property(nonatomic,weak)id<JinSliderViewDelegate> delegate;
+@property(nonatomic,assign)BOOL enableDragSlide;
 
 
 - (id)initWithTitles:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex;
@@ -35,4 +40,6 @@
 - (void)setSelectIndex:(unsigned long)index bSetOff:(BOOL)bSetOff;
 
 - (void)updateTitles:(NSArray*)titles;
+
+- (void)setScUserInteraction:(BOOL)enable;
 @end

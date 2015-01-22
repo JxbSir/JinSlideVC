@@ -20,7 +20,7 @@
 #define BORDER_GRAY_COLOR           [UIColor colorWithRed:204./255 green:204./255 blue:204./255 alpha:1]
 
 @implementation JinSlideView
-@synthesize delegate;
+@synthesize delegate,enableDragSlide;
 
 - (id)initWithTitles:(CGRect)frame vcArray:(NSArray*)vcArray selectIndex:(int)selectIndex
 {
@@ -101,7 +101,32 @@
     [self setSelectIndex:selectIndex bSetOff:YES];
 }
 
+#pragma mark - UIScrollview userInteractionEnabled
+- (void)setScUserInteraction:(BOOL)enable
+{
+    scView.userInteractionEnabled = enable;
+}
+
 #pragma mark - 滑动回调
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    fHisX = scrollView.contentOffset.x;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.x < fHisX)
+    {
+        //left
+        scView.userInteractionEnabled = nowSelectIndex > 0 || !enableDragSlide;
+    }
+    else if (scrollView.contentOffset.x > fHisX)
+    {
+        //right
+        scView.userInteractionEnabled = YES;
+    }
+}
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
 
@@ -117,6 +142,7 @@
         page++;
     }
     [self setSelectIndex:page bSetOff:NO];
+    scView.bounces = enableDragSlide && page == 0;
 }
 
 #pragma mark - 移动动画
