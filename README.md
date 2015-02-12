@@ -28,3 +28,7 @@
     
     JinSlideView* sl = [[JinSlideView alloc] initWithTitles:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) vcArray:@[vc1,vc2,vc3,vc4] selectIndex:1];
     [self.view addSubview:sl];
+
+
+## Example Picture
+![](https://github.com/JxbSir/JinSlideVC/blob/master/Demo/ad/slideview.gif)
